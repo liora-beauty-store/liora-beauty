@@ -22,8 +22,7 @@ app.use(express.static(__dirname));
 const stripeSecret = process.env.STRIPE_SECRET_KEY;
 
 if (!stripeSecret) {
-  console.error('❌ Variable STRIPE_SECRET_KEY manquante');
-  process.exit(1);
+  throw new Error('STRIPE_SECRET_KEY manquante');
 }
 
 const stripe = Stripe(stripeSecret);
