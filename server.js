@@ -71,4 +71,7 @@ app.post('/create-checkout-session', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 4242;
+app.get('/', (req, res) => {
+  res.send('Serveur OK');
+});
 app.listen(PORT, () => console.log(`Liora Beauty server running on port ${PORT}`));
