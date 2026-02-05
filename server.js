@@ -33,7 +33,28 @@ const PRODUCTS = [
     desc: { fr: "Rafraîchit et tonifie la peau.", en: "Refreshes and tones the skin." },
     image: "/images/brume.jpg" }
 ];
+const express = require('express');
+const Stripe = require('stripe');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+app.use(express.static(__dirname));
+
+// ... ton tableau PRODUCTS, tes autres routes (Stripe, etc.)
+
+// ➜ AJOUTE ÇA :
+app.get('/', (req, res) => {
+  res.send('Serveur Liora Beauty OK 👍');
+});
+
+// lancement du serveur
+const PORT = process.env.PORT || 4242;
+app.listen(PORT, () => {
+  console.log(`Serveur lancé sur le port ${PORT}`);
+});
 app.get('/api/products', (req, res) => {
   res.json(PRODUCTS);
 });
