@@ -170,8 +170,6 @@ app.post('/create-checkout-session', async (req, res) => {
 // ------------------------------
 // Démarrage du serveur
 // ------------------------------
-const PORT = process.env.PORT || 4242;
 
-app.listen(PORT, () => {
-  console.log(`✅ Serveur Liora Beauty lancé sur le port ${PORT}`);
 });
+module.exports = app;
