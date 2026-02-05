@@ -4,11 +4,12 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
 
-const stripeSecret = process.env.STRIPE_SECRET_KEY || 'sk_test_REPLACE_ME';
+const stripeSecret = process.env.STRIPE_SECRET_KEY;
 const stripe = Stripe(stripeSecret);
 
 const PRODUCTS = [
