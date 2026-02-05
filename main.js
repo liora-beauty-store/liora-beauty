@@ -15,15 +15,7 @@ function renderStaticText(){
   });
 }
 
-async function loadProducts(){
-  try{
-    const res = await fetch('/api/products');
-    const data = await res.json();
-    API_PRODUCTS.splice(0, API_PRODUCTS.length, ...data);
-    renderProducts();
-  }catch(e){
-    console.error('Erreur chargement produits', e);
-  }
+
 }
 
 function formatPrice(cents){ return (cents/100).toFixed(2) + ' €'; }
@@ -99,4 +91,4 @@ checkoutBtn.addEventListener('click', async ()=>{
 
 // init
 renderStaticText();
-loadProducts();
+
