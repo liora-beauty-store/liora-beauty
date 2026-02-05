@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Liora Beauty — Boutique</title>
+  <style>
+    :root{
+      --pink:#F7DAD9;
+      --cream:#FFF9F8;
+      --dark:#2E2E2E;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,Arial,sans-serif;color:var(--dark);background:var(--cream)}
+    .header{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:transparent}
+    .brand h1{margin:0;font-size:1.6rem;font-weight:700}
+    .brand h1 span{color:var(--pink);margin-left:6px}
+    .actions select{padding:0.4rem;border-radius:6px;border:1px solid #eee}
+    .hero{background:linear-gradient(90deg, rgba(247,218,217,0.6), rgba(255,249,248,0.6));padding:2rem;text-align:center}
+    .hero-text h2{margin:0 0 0.5rem 0;font-size:1.6rem}
+    main{display:flex;gap:1rem;padding:1rem;max-width:1100px;margin:0 auto}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;flex:1}
+    .card{background:white;padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(46,46,46,0.05)}
+    .card img{width:100%;height:220px;object-fit:cover;border-radius:8px}
+    .card h3{margin:0.6rem 0 0.3rem 0;font-size:1.05rem}
+    .card p{margin:0.2rem 0 0.6rem 0;color:#666;font-size:0.95rem}
+    .card .price{font-weight:600;margin-bottom:0.5rem}
+    .card button{padding:0.5rem 0.8rem;border:none;background:var(--pink);color:var(--dark);border-radius:8px;cursor:pointer;font-weight:600}
+    #cart{width:320px;background:white;padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(46,46,46,0.04)}
+    #cart-items{list-style:none;padding:0;margin:0 0 1rem 0;max-height:300px;overflow:auto}
+    #cart-items li{display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid #f1f1f1}
+    #checkout-btn{width:100%;padding:0.7rem;background:var(--dark);color:white;border:none;border-radius:8px;cursor:pointer}
+    footer{text-align:center;padding:1rem 0;color:#777;margin-top:1rem}
+    @media(max-width:900px){main{flex-direction:column}#cart{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <h1>Liora<span>Beauty</span></h1>
+    </div>
+    <div class="actions">
+      <select id="lang">
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
+      </select>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2 data-fr="Beauté naturelle, simplicité quotidienne" data-en="Natural beauty, simple daily care">Beauté naturelle, simplicité quotidienne</h2>
+      <p data-fr="Produits doux, efficaces et pensés pour votre peau." data-en="Gentle, effective products designed for your skin.">Produits doux, efficaces et pensés pour votre peau.</p>
+    </div>
+  </section>
+
+  <main>
+    <section id="products" class="grid"></section>
+
+    <aside id="cart">
+      <h2 data-fr="Panier" data-en="Cart">Panier</h2>
+      <ul id="cart-items"></ul>
+      <div id="cart-total">Total: 0,00 €</div>
+      <button id="checkout-btn" disabled data-fr="Passer au paiement" data-en="Checkout">Passer au paiement</button>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; Liora Beauty — <span data-fr="Tous droits réservés" data-en="All rights reserved">Tous droits réservés</span></p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
