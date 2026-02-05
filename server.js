@@ -14,7 +14,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 // Pour servir les fichiers statiques (images, success.html, cancel.html, etc.)
-app.use(express.static(__dirname));
+
 
 // ------------------------------
 // Stripe
