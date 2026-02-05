@@ -2,9 +2,9 @@
 // Backend minimal Liora Beauty (test)
 // --------------------------------------
 
-const express = require('express');
+const express = require('express');const Stripe = require('stripe');
 
-const app = express();
+const app = express();const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 app.use(express.json());
 
 // Route de test pour vérifier que le serveur marche
