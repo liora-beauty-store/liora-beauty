@@ -9,7 +9,9 @@ const bodyParser = require('body-parser');
 // ------------------------------
 // App Express
 // ------------------------------
-const app = express();
+const app = express();app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
 
 app.use(cors());
 app.use(bodyParser.json());
