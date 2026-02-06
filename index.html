@@ -2,48 +2,326 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Liora Beauty</title>
+  <title>Liora Beauty – Coffrets & Accessoires</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: Arial, sans-serif;
-      background: #fff;
+      background: #f7f4f1;
+      color: #222;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    nav a {
+      margin-left: 15px;
+      font-size: 14px;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background: #f0ebe6;
+    }
+    .hero-text {
+      max-width: 450px;
+      margin: 10px;
+    }
+    .hero-text h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    .hero-text p {
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .hero-text .btn-primary {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #000;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+    .hero-image {
+      max-width: 380px;
+      margin: 10px;
+    }
+    .hero-image img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
       text-align: center;
-      padding: 50px;
     }
-    h1 {
-      color: #000;
+    .section p.section-subtitle {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #666;
+      font-size: 14px;
     }
-    button {
-      padding: 15px 30px;
-      font-size: 18px;
-      background: black;
-      color: white;
-      border: none;
-      cursor: pointer;
-      margin-top: 30px;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .card img {
+      width: 100%;
+      display: block;
+    }
+    .card-body {
+      padding: 15px 15px 20px 15px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    .card-desc {
+      font-size: 14px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .card-price {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .card-footer {
+      margin-top: auto;
+    }
+    .btn-secondary {
+      display: inline-block;
+      padding: 10px 18px;
+      font-size: 14px;
+      background: #000;
+      color: #fff;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .btn-outline {
+      display: inline-block;
+      padding: 8px 14px;
+      font-size: 13px;
+      border-radius: 4px;
+      border: 1px solid #aaa;
+      margin-left: 8px;
+    }
+
+    .banner {
+      background: #e9ded4;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+      font-size: 12px;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: underline;
+      margin: 0 5px;
+    }
+
+    @media (max-width: 600px) {
+      .hero-text h1 {
+        font-size: 26px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Liora Beauty</h1>
-  <p>Des soins élégants. Une beauté naturelle.</p>
+  <header>
+    <div class="logo">LIORA BEAUTY</div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="#coffrets-parfum">Coffrets parfum</a>
+      <a href="#accessoires">Accessoires</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-  <a 
-  href="https://buy.stripe.com/9B6dR9bjN6kue1t08d9fW00"
-  target="_blank"
-  style="
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 18px;
-    background: black;
-    color: white;
-    text-decoration: none;
-    margin-top: 30px;
-  "
->
-  Payer
-</a>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Coffrets beauté & accessoires élégants</h1>
+      <p>
+        Liora Beauty sélectionne des coffrets parfum et des accessoires
+        beauté prêts à offrir, pour sublimer chaque routine avec simplicité
+        et élégance.
+      </p>
+      <!-- Remplace TON_LIEN_STRIPE_COFFRET par ton vrai lien Stripe -->
+      <a class="btn-primary" href="TON_LIEN_STRIPE_COFFRET" target="_blank" rel="noopener">
+        Commander le coffret parfum
+      </a>
+    </div>
+    <div class="hero-image">
+      <img src="images/parfum-yara-1.jpg" alt="Coffret parfum Liora Beauty">
+    </div>
+  </section>
 
+  <section class="section" id="coffrets-parfum">
+    <h2>Coffrets parfum</h2>
+    <p class="section-subtitle">
+      Des coffrets prêts à offrir, au design raffiné, pour un cadeau chic et immédiat.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <img src="images/parfum-yara-1.jpg" alt="Coffret parfum doré">
+        <div class="card-body">
+          <div class="card-title">Coffret parfum Yara – Doré</div>
+          <div class="card-desc">
+            Un coffret lumineux aux notes gourmandes et élégantes. Idéal pour marquer une
+            attention délicate.
+          </div>
+          <div class="card-price">39,90 €</div>
+          <div class="card-footer">
+            <a class="btn-secondary" href="TON_LIEN_STRIPE_COFFRET" target="_blank" rel="noopener">
+              Acheter ce coffret
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/parfum-yara-2.jpg" alt="Coffret parfum pêche">
+        <div class="card-body">
+          <div class="card-title">Coffret parfum Yara – Fruité</div>
+          <div class="card-desc">
+            Un mélange de douceur et de sensualité, dans un coffret visuel chaleureux
+            et raffiné.
+          </div>
+          <div class="card-price">39,90 €</div>
+          <div class="card-footer">
+            <!-- Tu pourras plus tard mettre un 2e lien Stripe ici -->
+            <a class="btn-secondary" href="TON_LIEN_STRIPE_COFFRET" target="_blank" rel="noopener">
+              Acheter ce coffret
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="accessoires">
+    <h2>Accessoires beauté</h2>
+    <p class="section-subtitle">
+      Des kits complets pour préparer la peau, appliquer le maquillage et créer une
+      routine cocooning à la maison.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <img src="images/kit-violet.jpg" alt="Kit accessoires violet">
+        <div class="card-body">
+          <div class="card-title">Kit maquillage lavande</div>
+          <div class="card-desc">
+            Pinceaux, éponges et bandeau assortis pour une routine maquillage
+            complète dans des tons lavande.
+          </div>
+          <div class="card-price">24,90 €</div>
+          <div class="card-footer">
+            <a class="btn-secondary" href="#" >
+              Bientôt disponible
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/kit-beige.jpg" alt="Kit accessoires beige">
+        <div class="card-body">
+          <div class="card-title">Kit nude & éponges</div>
+          <div class="card-desc">
+            Ensemble complet de pinceaux et éponges dans des tons nude, idéal pour
+            un maquillage naturel.
+          </div>
+          <div class="card-price">24,90 €</div>
+          <div class="card-footer">
+            <a class="btn-secondary" href="#">
+              Bientôt disponible
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/kit-rose.jpg" alt="Kit bandeau rose">
+        <div class="card-body">
+          <div class="card-title">Kit bandeau & poignets rose</div>
+          <div class="card-desc">
+            Bandeau et poignets ultra doux pour garder les cheveux au sec et
+            rendre le démaquillage plus confortable.
+          </div>
+          <div class="card-price">14,90 €</div>
+          <div class="card-footer">
+            <a class="btn-secondary" href="#">
+              Bientôt disponible
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="banner">
+    Paiement sécurisé via Stripe · Livraison rapide · Service client par e-mail : contact@liorabeauty.fr
+  </div>
+
+  <footer>
+    © <span id="year"></span> Liora Beauty
+    · <a href="mentions.html">Mentions légales</a>
+    · <a href="contact.html">Contact</a>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
