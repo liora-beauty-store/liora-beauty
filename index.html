@@ -12,56 +12,100 @@
     }
     body {
       font-family: Arial, sans-serif;
-      background: #f7f4f1;
+      background: radial-gradient(circle at top left, #fce9e1, #f7f4f1 40%, #f1ece7);
       color: #222;
     }
     a {
       text-decoration: none;
       color: inherit;
     }
+
+    /* HEADER */
     header {
-      background: #000;
+      background: rgba(0,0,0,0.9);
       color: #fff;
-      padding: 15px 20px;
+      padding: 12px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    header .logo {
+    .logo {
       font-weight: bold;
       letter-spacing: 2px;
+      font-size: 16px;
     }
     nav a {
       margin-left: 15px;
-      font-size: 14px;
+      font-size: 13px;
+      opacity: 0.9;
     }
+
+    /* BOUTONS */
+    .btn-primary {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #000;
+      color: #fff;
+      border-radius: 999px;
+      font-size: 15px;
+      border: 1px solid #000;
+    }
+    .btn-primary:hover {
+      background: #111;
+    }
+    .btn-secondary {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #000;
+      color: #fff;
+      border-radius: 999px;
+      font-size: 14px;
+      text-align: center;
+    }
+    .btn-secondary.disabled {
+      background: transparent;
+      color: #333;
+      border: 1px solid #bbb;
+    }
+
+    /* HERO */
     .hero {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px;
-      background: #f0ebe6;
+      padding: 40px 20px 30px 20px;
     }
     .hero-text {
-      max-width: 450px;
+      max-width: 460px;
       margin: 10px;
     }
     .hero-text h1 {
       font-size: 32px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+    }
+    .hero-subtitle {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #b48a6a;
+      margin-bottom: 6px;
     }
     .hero-text p {
-      margin-bottom: 20px;
-      line-height: 1.5;
+      margin-bottom: 18px;
+      line-height: 1.6;
+      color: #444;
     }
-    .hero-text .btn-primary {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #000;
-      color: #fff;
-      border-radius: 4px;
-      font-size: 15px;
+    .hero-badges {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #666;
+    }
+    .hero-badges span {
+      margin-right: 10px;
     }
     .hero-image {
       max-width: 380px;
@@ -69,36 +113,39 @@
     }
     .hero-image img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
       display: block;
     }
 
+    /* SECTIONS */
     .section {
-      padding: 40px 20px;
+      padding: 30px 20px 40px 20px;
       max-width: 1100px;
       margin: 0 auto;
     }
     .section h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
+      font-size: 22px;
       text-align: center;
+      margin-bottom: 8px;
     }
-    .section p.section-subtitle {
+    .section-subtitle {
       text-align: center;
       margin-bottom: 25px;
       color: #666;
       font-size: 14px;
     }
 
+    /* GRID PRODUITS */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+      gap: 22px;
     }
     .card {
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -108,20 +155,21 @@
       display: block;
     }
     .card-body {
-      padding: 15px 15px 20px 15px;
+      padding: 14px 16px 18px 16px;
       display: flex;
       flex-direction: column;
       flex: 1;
     }
     .card-title {
       font-weight: bold;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       font-size: 16px;
     }
     .card-desc {
       font-size: 14px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       line-height: 1.5;
+      color: #555;
     }
     .card-price {
       font-weight: bold;
@@ -130,36 +178,33 @@
     .card-footer {
       margin-top: auto;
     }
-    .btn-secondary {
+    .tag {
       display: inline-block;
-      padding: 10px 18px;
-      font-size: 14px;
-      background: #000;
-      color: #fff;
-      border-radius: 4px;
-      text-align: center;
-    }
-    .btn-outline {
-      display: inline-block;
-      padding: 8px 14px;
-      font-size: 13px;
-      border-radius: 4px;
-      border: 1px solid #aaa;
-      margin-left: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: #f3e0d5;
+      padding: 3px 7px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+      color: #8a5f3b;
     }
 
+    /* BANNIERE */
     .banner {
-      background: #e9ded4;
+      background: #e8ddd2;
       text-align: center;
-      padding: 25px 15px;
-      font-size: 14px;
+      padding: 18px 15px;
+      font-size: 13px;
+      color: #444;
     }
 
+    /* FOOTER */
     footer {
       background: #111;
       color: #ccc;
       text-align: center;
-      padding: 15px;
+      padding: 14px;
       font-size: 12px;
     }
     footer a {
@@ -168,9 +213,16 @@
       margin: 0 5px;
     }
 
-    @media (max-width: 600px) {
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .hero {
+        padding-top: 25px;
+      }
       .hero-text h1 {
         font-size: 26px;
+      }
+      nav {
+        display: none; /* on simplifie sur mobile */
       }
     }
   </style>
@@ -180,68 +232,75 @@
   <header>
     <div class="logo">LIORA BEAUTY</div>
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="#coffrets-parfum">Coffrets parfum</a>
+      <a href="#coffrets">Coffrets parfum</a>
       <a href="#accessoires">Accessoires</a>
-      <a href="contact.html">Contact</a>
+      <a href="Contact.html">Contact</a>
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
-      <h1>Coffrets beauté & accessoires élégants</h1>
+      <div class="hero-subtitle">Nouvelle sélection</div>
+      <h1>Coffrets parfum & accessoires beauté prêts à offrir</h1>
       <p>
-        Liora Beauty sélectionne des coffrets parfum et des accessoires
-        beauté prêts à offrir, pour sublimer chaque routine avec simplicité
-        et élégance.
+        Liora Beauty réunit des coffrets parfum lumineux et des accessoires
+        douceur pour sublimer chaque routine beauté, sans complication.
       </p>
-      <!-- Remplace TON_LIEN_STRIPE_COFFRET par ton vrai lien Stripe -->
-      <a class="btn-primary" href="TON_LIEN_STRIPE_COFFRET" target="_blank" rel="noopener">
+      <a class="btn-primary" href="https://buy.stripe.com/9B6dR9bjN6kue1t08d9fW00" target="_blank" rel="noopener">
         Commander le coffret parfum
       </a>
+      <div class="hero-badges">
+        <span>✓ Paiement sécurisé Stripe</span>
+        <span>✓ Livraison rapide</span>
+        <span>✓ Idéal à offrir</span>
+      </div>
     </div>
     <div class="hero-image">
+      <!-- Mets ici ton image coffret principal -->
       <img src="images/parfum-yara-1.jpg" alt="Coffret parfum Liora Beauty">
     </div>
   </section>
 
-  <section class="section" id="coffrets-parfum">
+  <!-- COFFRETS PARFUM -->
+  <section class="section" id="coffrets">
     <h2>Coffrets parfum</h2>
     <p class="section-subtitle">
-      Des coffrets prêts à offrir, au design raffiné, pour un cadeau chic et immédiat.
+      Des coffrets au design raffiné, parfaits pour un cadeau chic et élégant.
     </p>
 
     <div class="grid">
       <div class="card">
-        <img src="images/parfum-yara-1.jpg" alt="Coffret parfum doré">
+        <img src="images/parfum-yara-1.jpg" alt="Coffret parfum Yara doré">
         <div class="card-body">
-          <div class="card-title">Coffret parfum Yara – Doré</div>
+          <span class="tag">Best-seller</span>
+          <div class="card-title">Coffret Yara – Doré</div>
           <div class="card-desc">
-            Un coffret lumineux aux notes gourmandes et élégantes. Idéal pour marquer une
-            attention délicate.
+            Un coffret lumineux aux notes gourmandes et crémeuses. À offrir ou à s’offrir
+            pour un moment de douceur élégant.
           </div>
           <div class="card-price">39,90 €</div>
           <div class="card-footer">
-            <a class="btn-secondary" href="TON_LIEN_STRIPE_COFFRET" target="_blank" rel="noopener">
-              Acheter ce coffret
+            <a class="btn-secondary" href="https://buy.stripe.com/9B6dR9bjN6kue1t08d9fW00" target="_blank" rel="noopener">
+              Payer maintenant
             </a>
           </div>
         </div>
       </div>
 
       <div class="card">
-        <img src="images/parfum-yara-2.jpg" alt="Coffret parfum pêche">
+        <img src="images/parfum-yara-2.jpg" alt="Coffret parfum Yara pêche">
         <div class="card-body">
-          <div class="card-title">Coffret parfum Yara – Fruité</div>
+          <span class="tag">Édition visuelle</span>
+          <div class="card-title">Coffret Yara – Fruité</div>
           <div class="card-desc">
-            Un mélange de douceur et de sensualité, dans un coffret visuel chaleureux
-            et raffiné.
+            Un visuel chaleureux et des notes fruitées pour celles qui aiment les parfums
+            enveloppants et lumineux.
           </div>
           <div class="card-price">39,90 €</div>
           <div class="card-footer">
-            <!-- Tu pourras plus tard mettre un 2e lien Stripe ici -->
-            <a class="btn-secondary" href="TON_LIEN_STRIPE_COFFRET" target="_blank" rel="noopener">
-              Acheter ce coffret
+            <a class="btn-secondary disabled" href="#">
+              Bientôt disponible
             </a>
           </div>
         </div>
@@ -249,6 +308,7 @@
     </div>
   </section>
 
+  <!-- ACCESSOIRES -->
   <section class="section" id="accessoires">
     <h2>Accessoires beauté</h2>
     <p class="section-subtitle">
@@ -258,16 +318,17 @@
 
     <div class="grid">
       <div class="card">
-        <img src="images/kit-violet.jpg" alt="Kit accessoires violet">
+        <img src="images/kit-violet.jpg" alt="Kit maquillage lavande">
         <div class="card-body">
+          <span class="tag">Routine complète</span>
           <div class="card-title">Kit maquillage lavande</div>
           <div class="card-desc">
-            Pinceaux, éponges et bandeau assortis pour une routine maquillage
-            complète dans des tons lavande.
+            Pinceaux, éponges et accessoires assortis dans des tons lavande pour une routine
+            maquillage douce et girly.
           </div>
           <div class="card-price">24,90 €</div>
           <div class="card-footer">
-            <a class="btn-secondary" href="#" >
+            <a class="btn-secondary disabled" href="#">
               Bientôt disponible
             </a>
           </div>
@@ -275,16 +336,17 @@
       </div>
 
       <div class="card">
-        <img src="images/kit-beige.jpg" alt="Kit accessoires beige">
+        <img src="images/kit-beige.jpg" alt="Kit nude & éponges">
         <div class="card-body">
+          <span class="tag">Look naturel</span>
           <div class="card-title">Kit nude & éponges</div>
           <div class="card-desc">
-            Ensemble complet de pinceaux et éponges dans des tons nude, idéal pour
-            un maquillage naturel.
+            Un ensemble de pinceaux et d’éponges dans des tons nude, parfait pour un teint
+            naturel et lumineux.
           </div>
           <div class="card-price">24,90 €</div>
           <div class="card-footer">
-            <a class="btn-secondary" href="#">
+            <a class="btn-secondary disabled" href="#">
               Bientôt disponible
             </a>
           </div>
@@ -292,22 +354,19 @@
       </div>
 
       <div class="card">
-        <img src="images/kit-rose.jpg" alt="Kit bandeau rose">
+        <img src="images/kit-rose.jpg" alt="Kit bandeau & poignets rose">
         <div class="card-body">
+          <span class="tag">Cocooning</span>
           <div class="card-title">Kit bandeau & poignets rose</div>
           <div class="card-desc">
-            Bandeau et poignets ultra doux pour garder les cheveux au sec et
-            rendre le démaquillage plus confortable.
+            Bandeau et poignets ultra doux pour garder les cheveux au sec et rendre le
+            démaquillage plus confortable.
           </div>
           <div class="card-price">14,90 €</div>
           <div class="card-footer">
-<a
-  class="btn-secondary"
-  href="COLLE_ICI_TON_LIEN_STRIPE"
-  target="_blank"
->
-  Payer
-</a>
+            <a class="btn-secondary disabled" href="#">
+              Bientôt disponible
+            </a>
           </div>
         </div>
       </div>
@@ -315,13 +374,13 @@
   </section>
 
   <div class="banner">
-    Paiement sécurisé via Stripe · Livraison rapide · Service client par e-mail : contact@liorabeauty.fr
+    Paiement sécurisé via Stripe · Livraison rapide · Service client : contact@liorabeauty.fr
   </div>
 
   <footer>
     © <span id="year"></span> Liora Beauty
-    · <a href="mentions.html">Mentions légales</a>
-    · <a href="contact.html">Contact</a>
+    · <a href="Mentions.html">Mentions légales</a>
+    · <a href="Contact.html">Contact</a>
   </footer>
 
   <script>
